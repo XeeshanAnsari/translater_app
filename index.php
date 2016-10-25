@@ -36,13 +36,18 @@
       <div>
           <h1>Translate</h1>
           <form action="./database/search.php" method="post">
-            <textarea name="english" class="textarea" ></textarea>
-            <textarea name="english" class="textarea" ><?php echo @$_GET['roman'];?></textarea><br>
+            <textarea name="english" class="textarea" ></textarea><br>
             <input type="submit" value="search" name="search" class="btn btn-primary">
           </form>
-          
+<?php
+  include("./database/search.php");
+
+?>   
+       <br>
+       <textarea name="roman" class="textarea" ><?php echo @$_GET['roman']; ?></textarea><br>       
   </div>
+ 
   
-  
+
 </body>
 </html>
