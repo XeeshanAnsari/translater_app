@@ -1,0 +1,26 @@
+body{
+    padding: 30px 15%;
+}
+textarea{
+    width: 45%;
+    height: 100px;
+    display: inline;
+}
+.mainBox{
+    padding: 100px;
+    background: darkgray;
+    margin-top: -20px
+}
+#input-box{
+    padding: 10px 20%;
+   
+}
+.input-field{
+    width: 205%;
+    height: 40px;
+    padding: 5px;
+    border-radius: 5px;
+}
+.btn-insert{
+    width: 100%;
+}
