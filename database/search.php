@@ -17,7 +17,7 @@
               $roman = $row['roman'];
               $france = $row['france'];
               
-              echo "<script> window.open('../index.php?roman=$roman','_self')</script>" ;
+              echo "<script> window.open('../index.php?roman=$roman ','_self')</script>" ;
                           
                     }
          

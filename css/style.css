@@ -24,3 +24,7 @@ textarea{
 .btn-insert{
     width: 100%;
 }
+#table-show {
+    max-height: 200px;
+    
+}

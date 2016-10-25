@@ -23,6 +23,7 @@
                 <ul class=" nav navbar-nav ">
                     <li><a href="index.php">Home</a></li>
                     <li><a href="insert.php">Insert</a></li>
+                    <li><a href="select.php">Record</a></li>
                        
                 </ul>
             </div>            
@@ -36,13 +37,10 @@
       <div>
           <h1>Translate</h1>
           <form action="./database/search.php" method="post">
-            <textarea name="english" class="textarea" ></textarea><br>
+            <textarea name="english" cols="" rows=""  class="textarea" ></textarea><br>
             <input type="submit" value="search" name="search" class="btn btn-primary">
           </form>
-<?php
-  include("./database/search.php");
-
-?>   
+ 
        <br>
        <textarea name="roman" class="textarea" ><?php echo @$_GET['roman']; ?></textarea><br>       
   </div>

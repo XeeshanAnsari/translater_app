@@ -31,20 +31,47 @@
         </div>
     </div>
   <div class="mainBox">
-      <div id="input-box">
-          <form action="./database/insert.php" method="post">
-             <label for="eng"> <input type="text" id="eng" name="eng" placeholder="English" class="input-field">  </label><br>
-             <label for="roman"> <input type="text" id="roman" name="roman" placeholder="Roman" class="input-field">  </label><br>
-             <label for="france"> <input type="text" id="france" name="france" placeholder="France" class="input-field">  </label><br>
-             <input type="submit" value="submit" name="submit" class="btn btn-primary btn-insert"><br>
-           </form>
-           <h1>
-              <?php
-                echo @$_GET['inserted'];
-               ?>
-            
-           </h1>
-      </div>
+     <div id="table-show">
+         <table class="table table-default table-hover table-justified">
+             <tr>
+                 <th>Serial No</th>
+                 <th>English</th>
+                 <th>Roman</th>
+                 <th>France</th>
+             </tr>
+             
+         
+         
+
+
+<?php
+
+    mysql_connect("localhost","root","");
+    mysql_select_db("database");
+    $query = "SELECT * FROM lang ";
+   
+    $run = mysql_query($query);
+  
+  
+   while($row = mysql_fetch_array($run)){
+       $id = $row['s_no'];
+       $english = $row['english'];
+       $roman = $row['roman'];
+       $france = $row['france'];
+      
+       
+?>  
+             <tr>
+                    <td><?php echo $id;   ?></td>
+                    <td><?php echo $english;   ?></td>
+                    <td><?php echo $roman;   ?></td>
+                    <td><?php echo $france;   ?></td>
+                    
+            </tr>
+   <?php } ?>
+         </table>
+
+     </div>
       
   </div>
   
