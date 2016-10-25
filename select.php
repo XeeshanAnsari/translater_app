@@ -30,7 +30,11 @@
             </div>            
         </div>
     </div>
+    
   <div class="mainBox">
+      <div>
+          <h2> <?php  echo @$_GET['deleted'];?></h2>
+      </div>
      <div id="table-show">
          <table class="table table-default table-hover table-justified">
              <tr>
@@ -38,6 +42,7 @@
                  <th>English</th>
                  <th>Roman</th>
                  <th>France</th>
+                 <th>Delete</th>
              </tr>
              
          
@@ -66,6 +71,7 @@
                     <td><?php echo $english;   ?></td>
                     <td><?php echo $roman;   ?></td>
                     <td><?php echo $france;   ?></td>
+                    <td><a href="./database/delete.php?del=<?php echo $id ?>">Delete</a></td>
                     
             </tr>
    <?php } ?>
