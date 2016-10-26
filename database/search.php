@@ -4,12 +4,14 @@
          mysql_select_db("database"); 
         if (isset($_POST['search'])){
           $search  = $_POST['english'];
+          $search1 = explode(' ', $search);
           
-          $query_search =" SELECT * from lang where english = '$search' ";
-        
-          
-         if(mysql_query($query_search)){
-              $run = mysql_query($query_search);      
+          for($i=0; $i<count($search1); $i++){
+           
+              $query_search ="SELECT * from lang where english='$search1[$i]' ";
+              $run = mysql_query($query_search);
+            
+                   
 
         
           while($row=mysql_fetch_array($run)){
@@ -17,13 +19,13 @@
               $roman = $row['roman'];
               $france = $row['france'];
               
-              echo "<script> window.open('../index.php?roman=$roman ','_self')</script>" ;
+              $result = $result . " " . $roman;
+              
+          }
+              
                           
-                    }
-         
-              }else{
-                    echo "<script> window.open('../index.php?roman=Not found','_self')</script>" ;
-              }
-         
-      }
- ?>
+            
+          }
+          echo "<script> window.open('../index.php?roman=$result ','_self')</script>" ;
+       }
+ ?>             

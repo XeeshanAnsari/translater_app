@@ -71,7 +71,7 @@
                     <td><?php echo $english;   ?></td>
                     <td><?php echo $roman;   ?></td>
                     <td><?php echo $france;   ?></td>
-                    <td><a href="./database/delete.php?del=<?php echo $id ?>">Delete</a></td>
+                    <td ><a href="./database/delete.php?del=<?php echo $id ?>" ><span class="glyphicon glyphicon-send"></span> Delete</a></td>
                     
             </tr>
    <?php } ?>
