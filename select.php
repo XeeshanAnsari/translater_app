@@ -32,9 +32,9 @@
     </div>
     
   <div class="mainBox">
-      <div>
+       <div>
           <h2> <?php  echo @$_GET['deleted'];?></h2>
-      </div>
+      </div>     
      <div id="table-show">
          <table class="table table-default table-hover table-justified">
              <tr>
@@ -80,7 +80,7 @@
      </div>
       
   </div>
-  
+ 
  
   
   

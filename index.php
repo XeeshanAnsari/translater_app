@@ -31,20 +31,20 @@
     </div>
  
   
-  
 
   <div class="mainBox">
       <div>
           <h1>Translate</h1>
           <form action="./database/search.php" method="post">
-            <textarea name="english" cols="" rows=""  class="textarea" ></textarea><br>
-            <input type="submit" value="search" name="search" class="btn btn-primary">
+            <textarea name="english"   class="textarea" onkeyup="showHint(this.value)" ></textarea><br>
+            <input type="submit" value="search" name="search" class="btn btn-primary"  >
           </form>
  
        <br>
-       <textarea name="roman" class="textarea" ><?php echo @$_GET['roman']; ?></textarea><br>       
+       <textarea name="roman" id="txtHint" class="textarea" ><?php echo @$_GET['roman']; ?></textarea><br>       
   </div>
- 
+    
+   
   
 
 </body>
