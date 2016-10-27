@@ -47,7 +47,11 @@
            echo $select;
            if($select == "english"){
               target($q,$select,"roman");      
-           }if($select == "roman"){
+           }
+           if($select == "roman"){
+               target($q,$select,"english");   
+           }
+           if($select == "france"){
                target($q,$select,"english");   
            }
          
