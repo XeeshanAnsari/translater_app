@@ -31,10 +31,13 @@ function showUser(str) {
                 document.getElementById("roman").innerHTML = this.responseText;
             }
         };
-       var e = document.getElementById("selecter");
-       var select = e.options[e.selectedIndex].text;
+       var select1 = document.getElementById("selecter1");
+        select1 = select1.options[select1.selectedIndex].text;
+      
+       var select2 = document.getElementById("selecter2");
+         select2 = select2.options[select2.selectedIndex].text;
                
-        xmlhttp.open("GET","./database/search.php?q=" + str + "&selecter1=" + select ,true);
+        xmlhttp.open("GET","./database/search.php?q=" + str + "&selecter1=" + select1 + "&selecter2=" + select2 ,true);
         
         xmlhttp.send();
     }
@@ -69,13 +72,16 @@ function showUser(str) {
       <div>
           <h1>Translate</h1>
           <form action="#" method="post">
-            <select name="select" id="selecter">
-               <option selected>Select a person:</option>
-               <option >english</option>
+            <select id="selecter1">
+               <option  selected >english</option>
                <option >roman</option>
-               <option >france</option>
-               
-            </select><span id="selected"></span>
+               <option >france</option>   
+            </select>
+            <select id="selecter2">
+               <option >english</option>
+               <option selected >roman</option>
+               <option >france</option>   
+            </select>
             <textarea name="english"  id="english"  class="textarea" onkeyup="showUser(this.value);" ></textarea><br>
             <textarea name="roman"  id="roman" class="textarea" ></textarea>
           </form>

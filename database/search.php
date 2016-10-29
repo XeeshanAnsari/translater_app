@@ -21,24 +21,13 @@
          mysql_connect("localhost","root","");
          mysql_select_db("database"); 
             
-             
-           $p = @$_REQUEST["p"];   
-         
-         
             
-          $q = @$_REQUEST["q"];
-           $select = @$_REQUEST["selecter1"]; 
+           $q = @$_REQUEST["q"];
+           $select1 = @$_REQUEST["selecter1"]; 
+           $select2 = @$_REQUEST["selecter2"]; 
           
-           if($select == "english"){
-              target($q,$select,"roman");      
-           }
-           if($select == "roman"){
-               target($q,$select,"english");   
-           }
-           if($select == "france"){
-               target($q,$select,"english");   
-           }
-         
+           
+           target($q,$select1,$select2);
              
          
        
