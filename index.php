@@ -11,9 +11,9 @@
      <script src="./js/bootstrap.min.js"></script>
      <link rel="stylesheet" href="./css/style.css">
      <script>
-function showUser(str) {
+function translator() {
     
-   
+   var str  = document.getElementById("selection").value;
     if (str == "") {
         document.getElementById("roman").innerHTML = "";
         return;
@@ -71,18 +71,19 @@ function showUser(str) {
   <div class="mainBox">
       <div>
           <h1>Translate</h1>
+          
           <form action="#" method="post">
-            <select id="selecter1">
+            <select id="selecter1" onchange = "translator();">
                <option  selected >english</option>
                <option >roman</option>
                <option >france</option>   
             </select>
-            <select id="selecter2">
+            <textarea name="english"  id="selection"  class="textarea" onkeyup="translator();" ></textarea><br>
+            <select id="selecter2" onchange = "translator();">
                <option >english</option>
                <option selected >roman</option>
                <option >france</option>   
             </select>
-            <textarea name="english"  id="english"  class="textarea" onkeyup="showUser(this.value);" ></textarea><br>
             <textarea name="roman"  id="roman" class="textarea" ></textarea>
           </form>
  
