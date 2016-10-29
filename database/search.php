@@ -1,11 +1,11 @@
 <?php
- function target($q,$select1,$target){
+ function target($q,$select,$target){
          $result = "";
                 $q =strtolower($q);
                 $search = explode(' ', $q);
            
          for($i=0; $i<count($search); $i++){
-              $query_search ="SELECT * from lang where $select1 = '$search[$i]' ";
+              $query_search ="SELECT * from lang where $select = '$search[$i]' ";
               $run = mysql_query($query_search);
                
                while($row=mysql_fetch_array($run)){
@@ -23,28 +23,12 @@
             
              
            $p = @$_REQUEST["p"];   
-           switch ($p) {
-               case 'value1': 
-                   $target = "english";
-                   break;
-              case 'value2':
-                   
-                   $target = "roman";
-                   break;
-               case 'value3':
-                  
-                   $target = "france";
-                   break;         
-               
-               default:
-                   $target = "";
-                   break;
-           }
-          echo $target;
+         
+         
             
           $q = @$_REQUEST["q"];
-           $select = @$_REQUEST["select1"]; 
-           echo $select;
+           $select = @$_REQUEST["selecter1"]; 
+          
            if($select == "english"){
               target($q,$select,"roman");      
            }

@@ -31,40 +31,15 @@ function showUser(str) {
                 document.getElementById("roman").innerHTML = this.responseText;
             }
         };
-       var select1 = document.getElementById("selected").innerHTML;
+       var e = document.getElementById("selecter");
+       var select = e.options[e.selectedIndex].text;
                
-        xmlhttp.open("GET","./database/search.php?q=" + str + "&select1=" + select1 ,true);
+        xmlhttp.open("GET","./database/search.php?q=" + str + "&selecter1=" + select ,true);
         
         xmlhttp.send();
     }
 }
-function showUser1(str) {
-    
-   
-    if (str == "") {
-        document.getElementById("selected").innerHTML = "";
-        return;
-    }
-      else { 
-        if (window.XMLHttpRequest) {
-            // code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp = new XMLHttpRequest();
-        } else {
-            // code for IE6, IE5
-            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("selected").innerHTML = this.responseText;
-            }
-        };
-       
-               
-        xmlhttp.open("GET","./database/search.php?p=" + str  ,true);
-        
-        xmlhttp.send();
-    }
-}
+
 </script>
 
      
@@ -94,11 +69,11 @@ function showUser1(str) {
       <div>
           <h1>Translate</h1>
           <form action="#" method="post">
-            <select name="select" id="select" onchange="showUser1(this.value)">
-               <option value="">Select a person:</option>
-               <option value="value1">English</option>
-               <option value="value2">Roman</option>
-               <option value="value3">France</option>
+            <select name="select" id="selecter">
+               <option selected>Select a person:</option>
+               <option >english</option>
+               <option >roman</option>
+               <option >france</option>
                
             </select><span id="selected"></span>
             <textarea name="english"  id="english"  class="textarea" onkeyup="showUser(this.value);" ></textarea><br>
