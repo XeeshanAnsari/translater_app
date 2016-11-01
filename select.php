@@ -24,19 +24,18 @@
                     <li><a href="index.php">Home</a></li>
                     <li><a href="insert.php">Insert</a></li>
                     <li><a href="select.php">Record</a></li>
-                   
-                       
+                      
                 </ul>
             </div>            
         </div>
     </div>
     
-  <div class="mainBox">
+  <div >
        <div>
           <h2> <?php  echo @$_GET['deleted'];?></h2>
       </div>     
      <div id="table-show">
-         <table class="table table-default table-hover table-justified">
+         <table class="table table-default  table-justified" id="table-show">
              <tr>
                  <th>Serial No</th>
                  <th>English</th>
@@ -44,10 +43,6 @@
                  <th>France</th>
                  <th>Delete</th>
              </tr>
-             
-         
-         
-
 
 <?php
 

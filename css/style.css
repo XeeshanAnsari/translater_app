@@ -11,6 +11,9 @@ textarea{
     background: grey;
     margin-top: -20px
 }
+h1{
+    text-align: center;
+}
 #input-box{
     padding: 10px 20%;
    
@@ -28,6 +31,6 @@ textarea{
     width: 100%;
 }
 #table-show {
-    max-height: 200px;
-    
+   background-color: white;
+   max-height: 10px;
 } 
